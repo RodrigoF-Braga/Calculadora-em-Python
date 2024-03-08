@@ -1,76 +1,178 @@
 import matplotlib.pyplot as plt
-while True:
-    texto = '''
-    ========== Calculadora =========
-    1. Soma (+)
-    2. Subtração (-)
-    3. Multiplicação (*)
-    4. Divisão (//)
-    5. Potenciação (**)
-    6. Fatorial (!)
-    7. Sair
-    '''
-    print(texto)
+import numpy as np
 
-    resposta = input("Selecione uma das opções: ")
-    if resposta in ('6'):
-        num1 = int(input("Insira o numero: "))
-        def Fatorial(num1):
-            fatorial = 1
-            for i in range (num1, 1, -1):
-                fatorial *= i
-            return fatorial
-        print(f"O resultado é {Fatorial(num1)}")
-    elif resposta in ('1','2','3','4','5'):
-        num1 = float(input("Insira o primeiro numero: "))
-        num2 = float(input("Insira o segundo numero: "))
+calculator = """
+ _______
+|  _____  |
+| |_____| |
+| |             | |
+| | x² √  CE  C | |
+| | 7  8  9   / | |
+| | 4  5  6   * | |
+| | 1  2  3   - | |
+| | 0  .  =   + | |
+| |_____| |
+|_______|
+    """
+print(calculator)
 
-    def Soma(num1,num2):
-        return num1 + num2
 
-    def Subtração(num1,num2):
-        return num1 - num2
+def soma(x, y):
+    return x+y
+    print(f"O resultado é {soma(x,y)}")
 
-    def Multiplicação(num1,num2):
-        return num1 * num2
 
-    def Divisão(num1,num2):
-        return num1 // num2
-    def Potenciação(num1,num2):
-        return num1 ** num2
+def subtracao(x, y):
+    return x-y
+    print(f"O resultado é {subtração(x,y)}")
 
-    if resposta == 1:
-        print(f"O resultado é {Soma(num1,num2)}")
 
-    elif resposta == 2:
-        print(f"O resultado é {Subtração(num1,num2)}")
+def multiplicacao(x, y):
+    return x*y
+    print(f"O resultado é {multiplicacao(x,y)}")
 
-    elif resposta == 3:
-        print(f"O resultado é {Multiplicação(num1,num2)}")
 
-    elif resposta == 4:
-        print(f"O resultado é {Divisão(num1,num2)}")
+def divisao(x, y):
+    return x/y
+    print(f"O resultado é {divisão(x,y)}")
 
-    elif resposta == 5:
-        print(f"O resultado é {Potenciação(num1,num2)}")
 
-    elif resposta == 7:
-        break
+def linear(x, a, b):
+    return a*x + b
+    print(f"O resultado é {linear(x, a, b)}")
 
-    else:
-        print("Insira uma resposta valida")
-    print("Selecione 1 para continuar e 2 para parar")
-    resposta_2 = int(input(""))
-    if resposta_2 == 2:
-        texto = ''''
-        Obrigado por usar
-        ,,,,,,,,,,,,,,,,,,,,__
-        ,,,,,,,,,,,,,,,,,,,/ *_) . -♥-♥-♥-♥-♥-♥-
-             ________,—-,_/,,/ ,
-        ,,,,/,,,,,,,,,,,,,,/
-          _/.....…(…|.(…|)
-         ./__....-|_|–|_|
-        '''
-        break
-    elif resposta_2 != 1 and 2:
-        print("Insira uma resposta valida")
+
+def plot_linear(a, b):
+    print("Faça o código")
+
+
+def exponencial(a, x):
+    print("Faça o código")
+
+
+def plot_exponencial(x, y):
+    print("Faça o código")
+
+
+def funcao_quadratica(x, a, b, c):
+    print("Faça o código")
+
+
+def calcular_raizes(a, b, c):
+    print("Faça o código")
+
+
+def plot_quadratica(a, b, c):
+    print("Faça o código")
+
+
+def fatorial(n):
+    print("Faça o código")
+
+
+def plot_fatorial(n):
+    print("Faça o código")
+
+
+def print_calculator():
+
+    mostrarCalculadora("""Inicie uma operação       
+                                
+    1: Básicas
+    2: Funções 
+    3: Sair""")
+
+
+def print_basica():
+    mostrarCalculadora("""Escolha sua  Opção     
+                       
+  1: Soma       
+  2: Subtração  
+  3: Multip.   
+  4: Divisão    
+  5: Voltar""")
+
+
+def print_funcoes():
+    mostrarCalculadora("""Escolha sua Função    
+                                 
+      1: Exponencial        
+      2: Quadrática    
+      3: Linear    
+      4: Fatorial
+      5. Voltar""")
+
+
+def init():
+    print_calculator()
+
+    escolha = int(input("\nEscolha uma opção para iniciar: "))
+
+    while escolha != 3:
+        if escolha == 1:
+            print_basica()
+
+            categoria = int(input("\nEscolha uma categoria: "))
+            while categoria != 5:
+
+                if categoria == 1:
+                    print("\nVocê escolheu SOMA")
+                    print("Faça o código")
+                    break
+
+                elif categoria == 2:
+                    print("\nVocê escolheu SUBTRAÇÃO")
+                    print("Faça o código")
+                    break
+
+                elif categoria == 3:
+                    print("\nVocê escolheu MULTIPLICAÇÃO")
+                    print("Faça o código")
+                    break
+
+                elif categoria == 4:
+                    print("\nVocê escolheu DIVISÃO")
+                    print("Faça o código")
+                    break
+
+                elif categoria == 5:
+                    print_basica()
+
+        elif escolha == 2:
+            print_funcoes()
+
+            funcao = int(input("\nEscolha uma função: "))
+
+            while funcao != 5:
+
+                if funcao == 1:
+                    print("\nVocê escolheu a função EXPONENCIAL (a ** x)")
+                    print("Faça o código")
+                    break
+
+                elif funcao == 2:
+                    print("\nVocê escolheu a função QUADRÁTICA (a * x ** 2 + b * x + c)")
+                    print("Faça o código")
+                    break
+
+                elif funcao == 3:
+                    print("\nVocê escolheu a função LINEAR f(x) = (a * x + b)")
+                    print("Faça o código")
+                    break
+
+                elif funcao == 4:
+                    print("\nVocê escolheu a função FATORIAL f(x) = (a * x + b)")
+                    print("Faça o código")
+                    break
+
+                elif funcao == 5:
+                    print_funcoes()
+
+        elif escolha == 3:
+            break
+        print_calculator()
+
+        escolha = int(input("\nEscolha uma opção para iniciar: "))
+
+
+init()
